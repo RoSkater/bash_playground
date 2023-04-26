@@ -1,0 +1,10 @@
+= BASH PLAYGROUND
+
+== EXERCISE 1: JSON MANIPULATION
+Bash Script that parses a given json and gets all the Nodes *ID*, *Key Pair* and *Peers*.
+
+Here is an example of how to execute it for the given repository:
+[source,sh]
+bash exercise_1.sh resources/test_nodes.js 
+
+== EXERCISE 2: YAML MANIPULATION

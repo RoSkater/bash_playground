@@ -1,0 +1,61 @@
+# YAML structure for a simple blockchain with 4 blocks
+version: "1.0"
+blockchain:
+  - block:
+      block_number: 1
+      timestamp: 2023-04-26 12:00:00
+      transactions:
+        - transaction_id: 1234
+          sender_address: "0x123abc"
+          receiver_address: "0x456def"
+          amount: 10.0
+        - transaction_id: 5678
+          sender_address: "0x456def"
+          receiver_address: "0x789ghi"
+          amount: 5.0
+      previous_hash: ""
+      nonce: 0
+      hash: "f1a4b1fe2d89042d118f8b97499e51f1c2d5d0c0c5dd9f44697a69f8620e5a5f"
+  - block:
+      block_number: 2
+      timestamp: 2023-04-26 12:10:00
+      transactions:
+        - transaction_id: 9012
+          sender_address: "0x123abc"
+          receiver_address: "0x789ghi"
+          amount: 2.5
+        - transaction_id: 3456
+          sender_address: "0x456def"
+          receiver_address: "0x123abc"
+          amount: 3.0
+      previous_hash: "f1a4b1fe2d89042d118f8b97499e51f1c2d5d0c0c5dd9f44697a69f8620e5a5f"
+      nonce: 278
+      hash: "d0e285db91797706363c773a059b766c24427db3d3af8c7f22b08fc4d7fcf4b4"
+  - block:
+      block_number: 3
+      timestamp: 2023-04-26 12:20:00
+      transactions:
+        - transaction_id: 7890
+          sender_address: "0x789ghi"
+          receiver_address: "0x123abc"
+          amount: 7.0
+        - transaction_id: 2345
+          sender_address: "0x123abc"
+          receiver_address: "0x456def"
+          amount: 1.5
+      previous_hash: "d0e285db91797706363c773a059b766c24427db3d3af8c7f22b08fc4d7fcf4b4"
+      nonce: 678
+      hash: "d9c0e17b8641cc73f1d291dcdf3b3b129303b00e2c42af951a7c3dfe6b0e6c2a"
+  - block:
+      block_number: 4
+      timestamp: 2023-04-26 12:30:00
+      transactions:
+        - transaction_id: 4567
+          sender_address: "0x456def"
+          receiver_address: "0x789ghi"
+          amount: 3.0
+        - transaction_id: 8901
+          sender_address: "0x789ghi"
+          receiver_address: "0x456def"
+          amount: 2.0
+      previous_hash: "d9c0e17b8641cc73f1d291dcdf3b3b129303b00e2c42af951a7c3
