@@ -1,28 +1,29 @@
 #!/bin/bash
 
-# Load the YAML library
-source yaml.sh
+# Load YAML data into a Bash variable
+blockchain=$(cat $1 | yq .blockchain)
 
-# Parse the YAML file into a Bash associative array
-yaml2array $1 blockchain
-
-# Initialize a variable to hold the total transaction value
-total_value=0
+#echo $blockchain
 
 # Loop through each block in the blockchain
-for (( i=0; i<${#blockchain[@]}; i++ )); do
-  # Get the transactions array for the current block
-  transactions=$(yaml_get_array blockchain $i.block.transactions)
+for i in $(seq 0 $(echo "$blockchain" | yq '. | length - 1')); do
+    #echo "ITERATION $i"
+    block=$(echo "$blockchain" | yq ".[$i].block")
 
-  # Loop through each transaction in the current block
-  for (( j=0; j<${#transactions[@]}; j++ )); do
-    # Get the amount for the current transaction
-    amount=$(yaml_get_value transactions $j.amount)
+    # Print the block index and hash
+    block_number=$(echo "$block" | yq ".block_number")
+    hash=$(echo "$block" | yq '.hash')
+    echo "Block $block_number hash: $hash"
 
-    # Add the amount to the total value
-    total_value=$(echo "$total_value + $amount" | bc)
-  done
+    # Loop through each transaction in the block
+    transactions=$(echo "$block" | yq '.transactions')
+    for j in $(seq 0 $(echo "$transactions" | yq '. | length - 1')); do
+        transaction=$(echo "$transactions" | yq ".[$j]")
+
+        # Print the transaction sender, recipient, and amount
+        sender=$(echo "$transaction" | yq '.sender_address')
+        recipient=$(echo "$transaction" | yq '.receiver_address')
+        amount=$(echo "$transaction" | yq '.amount')
+        echo "  Transaction $j: from $sender to $recipient, amount $amount"
+    done
 done
-
-# Print the total value
-echo "Total value of all transactions: $total_value"

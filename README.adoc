@@ -2,9 +2,27 @@
 
 == EXERCISE 1: JSON MANIPULATION
 Bash Script that parses a given json and gets all the Nodes *ID*, *Key Pair* and *Peers*.
+Make sure you have *jq* installed:
+[source,sh]
+sudo apt install jq
 
 Here is an example of how to execute it for the given repository:
 [source,sh]
 bash exercise_1.sh resources/test_nodes.js 
 
 == EXERCISE 2: YAML MANIPULATION
+Bash Script for listing all *blocks* in the yaml, their *ID number* and *hash*, and their *transactions*.
+
+First of all, make sure you have *yq* installed.
+
+Download it:
+[source,sh]
+sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+
+Provide execute permissions:
+[source,sh]
+sudo chmod a+x /usr/local/bin/yq
+
+Execute the script:
+[source,sh]
+bash exercise_2.sh resources/blocks.yaml 
