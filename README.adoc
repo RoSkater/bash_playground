@@ -2,6 +2,7 @@
 
 == EXERCISE 1: JSON MANIPULATION
 Bash Script that parses a given json and gets all the Nodes *ID*, *Key Pair* and *Peers*.
+
 Make sure you have *jq* installed:
 [source,sh]
 sudo apt install jq
@@ -25,4 +26,7 @@ sudo chmod a+x /usr/local/bin/yq
 
 Execute the script:
 [source,sh]
-bash exercise_2.sh resources/blocks.yaml 
+bash exercise_2.sh resources/blocks.yaml
+
+== EXERCISE 3: SYSTEMD SERVICE
+The purpose of this exercise is to define a service that executes a bash scritp that writes info in a log file every X seconds, so we can prove it is working.

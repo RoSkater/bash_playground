@@ -14,7 +14,7 @@ jq -c '.[].nodes[]' "$1" | while read node; do
     echo "Node ID: $id"
     echo "Public Key: $public_key"
     echo "Private Key: $private_key"
-    echo -n "Peers: "
+    echo -n "The node has $(echo "$node" | jq -r '.peers | length') Peers: "
     #Get each peer printed in the same line
     for peer in $peers; do
         echo -n "$peer "
