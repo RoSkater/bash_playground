@@ -28,5 +28,55 @@ Execute the script:
 [source,sh]
 bash exercise_2.sh resources/blocks.yaml
 
-== EXERCISE 3: SYSTEMD SERVICE
-The purpose of this exercise is to define a service that executes a bash scritp that writes info in a log file every X seconds, so we can prove it is working.
+== EXERCISE 3: SYSTEMD PERIODICAL SERVICE
+The purpose of this exercise is to define a *systemd* service that executes a bash script that gets the top 5 processes consuming the most CPU and writes them in the *ex3.log* file, with the timestamp when it was gotten and some information about such processes.
+
+Create the service file with:
+[source,sh]
+sudo nano /etc/systemd/system/exercise_3.service
+
+And write the content as shown in the *resources/exercise_3.service* with your own data.
+
+Save it with *CTRL+O* and close the editor with *CTRL+C*, and reload the systemd daemon:
+[source,sh]
+sudo systemctl daemon-reload
+
+Check the status of the service by running the command:
+[source,sh]
+sudo systemctl status exercise_3.service
+
+If everything is working correctly, you should see smething simialr to this:
+[source]
+● bash_ex_3.service - Exercise 3 from the bash playground repository
+     Loaded: loaded (/etc/systemd/system/bash_ex_3.service; disabled; vendor preset: enabled)
+     Active: activating (auto-restart) since Sat 2023-04-29 18:10:38 CEST; 10s ago
+    Process: 10755 ExecStart=/home/rvega/vscode/bash_playground/exercise_3.sh (code=exited, status=0/SUCCESS)
+   Main PID: 10755 (code=exited, status=0/SUCCESS)
+        CPU: 10ms
+abr 29 18:10:38 debian-machine systemd[1]: bash_ex_3.service: Succeeded.
+
+Finally, enable the service to start automatically at boot time by running the command:
+[source,sh]
+sudo systemctl enable exercise_3.service
+
+Now check the logs file to see if the service is running correctly every 30 seconds.
+
+To stop the service run:
+[source,sh]
+sudo systemctl status bash_ex_3.service
+
+And if you run *sudo systemctl status exercise_3.service
+* again, you should see something like this:
+[source]
+● bash_ex_3.service - Exercise 3 from the bash playground repository
+     Loaded: loaded (/etc/systemd/system/bash_ex_3.service; disabled; vendor preset: enabled)
+     Active: inactive (dead)
+
+With some logs under it about the service.
+
+If you want to see more detailed logs you can use:
+[source,sh]
+sudo journalctl -e -u bash_ex_3.service
+
+* *Option -e* for going to the end of the systemd logs file
+* *Option -u* for sepecified service logs

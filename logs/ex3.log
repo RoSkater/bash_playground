@@ -1,0 +1,18 @@
+----------------- 2023-04-29 18:10:08 ----------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+rvega       2716  0.3  2.8 907692 114100 ?       Sl   16:04   0:29 /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/node /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+root       10209  0.3  0.0      0     0 ?        I    18:03   0:01 [kworker/0:1-events]
+rvega        832  0.2  1.6 798236 66464 ?        Rl   14:01   0:35 /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/node /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/out/bootstrap-fork --type=ptyHost --logsPath /home/rvega/.vscode-server/data/logs/20230429T132645
+
+----------------- 2023-04-29 18:10:38 ----------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+rvega       2716  0.3  2.8 907692 114152 ?       Sl   16:04   0:29 /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/node /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+root       10209  0.3  0.0      0     0 ?        I    18:03   0:01 [kworker/0:1-events_power_efficient]
+rvega        832  0.2  1.6 798236 66412 ?        Sl   14:01   0:35 /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/node /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/out/bootstrap-fork --type=ptyHost --logsPath /home/rvega/.vscode-server/data/logs/20230429T132645
+
+----------------- 2023-04-29 18:11:09 ----------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+rvega       2716  0.3  2.8 907692 114412 ?       Sl   16:04   0:29 /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/node /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+root       10209  0.3  0.0      0     0 ?        I    18:03   0:01 [kworker/0:1-events]
+rvega        832  0.2  1.6 798236 65924 ?        Sl   14:01   0:35 /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/node /home/rvega/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/out/bootstrap-fork --type=ptyHost --logsPath /home/rvega/.vscode-server/data/logs/20230429T132645
+

@@ -1,0 +1,12 @@
+[Unit]
+Description=Exercise 3 from the bash playground repository
+After=network.target
+
+[Service]
+ExecStart=/path/to/vscode/bash_playground/exercise_3.sh
+User=youruser
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
